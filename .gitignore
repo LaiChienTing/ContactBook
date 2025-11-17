@@ -1,0 +1,25 @@
+# Qt build files
+build/
+*.pro.user
+*.pro.user.*
+
+# Test files
+test_*.txt
+
+# Compiled Object files
+*.o
+*.obj
+
+# MOC files
+moc_*.cpp
+moc_*.h
+ui_*.h
+
+# Temporary files
+*~
+*.autosave
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db

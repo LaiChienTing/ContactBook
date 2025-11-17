@@ -3,6 +3,9 @@
 
 #include <QFile>
 #include <QDebug>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QApplication>
 
 QString mFilename = "C:/Users/user/Desktop/EX/ContactBook/myfile.txt";
 
@@ -68,5 +71,60 @@ void MyWidget::on_pushButton_2_clicked()
     }
 
     Write(mFilename, saveFile);  // 呼叫Write
+}
+
+// 匯入功能
+void MyWidget::on_pushButton_3_clicked()
+{
+    // 使用 QFileDialog::getOpenFileName 開啟檔案選擇對話框
+    QString fileName = QFileDialog::getOpenFileName(this,
+                                                    QStringLiteral("選擇要匯入的檔案"),
+                                                    "",
+                                                    "Text Files (*.txt);;All Files (*)");
+    
+    if (fileName.isEmpty()) {
+        return;  // 使用者取消選擇
+    }
+    
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, QStringLiteral("錯誤"), QStringLiteral("無法開啟檔案！"));
+        return;
+    }
+    
+    // 清空現有資料
+    ui->tableWidget->setRowCount(0);
+    
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList fields = line.split(",");
+        
+        if (fields.size() >= 4) {  // 確保有足夠的欄位
+            int row = ui->tableWidget->rowCount();
+            ui->tableWidget->insertRow(row);
+            
+            for (int i = 0; i < 4; i++) {
+                QTableWidgetItem *item = new QTableWidgetItem(fields[i]);
+                ui->tableWidget->setItem(row, i, item);
+            }
+        }
+    }
+    
+    file.close();
+    QMessageBox::information(this, QStringLiteral("成功"), QStringLiteral("資料匯入成功！"));
+}
+
+// 結束功能
+void MyWidget::on_pushButton_4_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, QStringLiteral("確認"), 
+                                  QStringLiteral("確定要結束程式嗎？"),
+                                  QMessageBox::Yes | QMessageBox::No);
+    
+    if (reply == QMessageBox::Yes) {
+        QApplication::quit();
+    }
 }
 

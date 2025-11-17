@@ -46,9 +46,13 @@ void MyWidget::on_pushButton_clicked()
     QTableWidgetItem *inputRow1,*inputRow2,*inputRow3,*inputRow4;
 
     inputRow1 = new QTableWidgetItem(QString(ui->lineEdit->text()));
+    inputRow1->setForeground(Qt::black);
     inputRow2 = new QTableWidgetItem(QString(ui->lineEdit_2->text()));
+    inputRow2->setForeground(Qt::black);
     inputRow3 = new QTableWidgetItem(QString(ui->lineEdit_3->text()));
+    inputRow3->setForeground(Qt::black);
     inputRow4 = new QTableWidgetItem(QString(ui->lineEdit_4->text()));
+    inputRow4->setForeground(Qt::black);
 
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
 
@@ -106,6 +110,7 @@ void MyWidget::on_pushButton_3_clicked()
             
             for (int i = 0; i < 4; i++) {
                 QTableWidgetItem *item = new QTableWidgetItem(fields[i]);
+                item->setForeground(Qt::black);
                 ui->tableWidget->setItem(row, i, item);
             }
         }

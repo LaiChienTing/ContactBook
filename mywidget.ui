@@ -6,99 +6,181 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>597</width>
-    <height>439</height>
+    <width>700</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>450</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>通訊錄管理系統</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-    background-color: #f5f5f5;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #e8f4f8, stop:1 #f5f9fc);
+    font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
 }
 
 QTableWidget {
     background-color: white;
-    border: 2px solid #3498db;
-    border-radius: 5px;
-    gridline-color: #bdc3c7;
+    border: 2px solid #5dade2;
+    border-radius: 8px;
+    gridline-color: #d5dbdb;
+    selection-background-color: #5dade2;
 }
 
 QTableWidget::item {
-    padding: 5px;
+    padding: 8px;
+    border-bottom: 1px solid #ecf0f1;
 }
 
 QTableWidget::item:selected {
-    background-color: #3498db;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #5dade2, stop:1 #3498db);
     color: white;
+}
+
+QTableWidget::item:hover {
+    background-color: #ebf5fb;
 }
 
 QHeaderView::section {
-    background-color: #3498db;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #5dade2, stop:1 #3498db);
     color: white;
-    padding: 5px;
-    border: 1px solid #2980b9;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #2980b9;
     font-weight: bold;
+    font-size: 11pt;
+}
+
+QHeaderView::section:first {
+    border-top-left-radius: 6px;
+}
+
+QHeaderView::section:last {
+    border-top-right-radius: 6px;
+    border-right: none;
 }
 
 QLineEdit {
-    border: 2px solid #bdc3c7;
-    border-radius: 5px;
-    padding: 5px;
+    border: 2px solid #d5dbdb;
+    border-radius: 6px;
+    padding: 8px 12px;
     background-color: white;
+    font-size: 10pt;
+    selection-background-color: #5dade2;
 }
 
 QLineEdit:focus {
-    border: 2px solid #3498db;
+    border: 2px solid #5dade2;
+    background-color: #fbfcfc;
+}
+
+QLineEdit:hover {
+    border: 2px solid #aed6f1;
 }
 
 QLabel {
     color: #2c3e50;
     font-weight: bold;
+    font-size: 10pt;
+    padding-right: 5px;
 }
 
 QPushButton {
-    background-color: #3498db;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #5dade2, stop:1 #3498db);
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
+    border-radius: 6px;
+    padding: 10px 20px;
     font-weight: bold;
+    font-size: 10pt;
+    min-width: 80px;
 }
 
 QPushButton:hover {
-    background-color: #2980b9;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #7fb3d5, stop:1 #2980b9);
 }
 
 QPushButton:pressed {
-    background-color: #21618c;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #2980b9, stop:1 #21618c);
+    padding: 11px 19px 9px 21px;
 }
 
 QPushButton#pushButton_3 {
-    background-color: #27ae60;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #52be80, stop:1 #27ae60);
 }
 
 QPushButton#pushButton_3:hover {
-    background-color: #229954;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #76d7a3, stop:1 #229954);
+}
+
+QPushButton#pushButton_3:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #229954, stop:1 #1e8449);
+    padding: 11px 19px 9px 21px;
 }
 
 QPushButton#pushButton_4 {
-    background-color: #e74c3c;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #ec7063, stop:1 #e74c3c);
 }
 
 QPushButton#pushButton_4:hover {
-    background-color: #c0392b;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #f1948a, stop:1 #c0392b);
+}
+
+QPushButton#pushButton_4:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #c0392b, stop:1 #a93226);
+    padding: 11px 19px 9px 21px;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
     <widget class="QTableWidget" name="tableWidget"/>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
      <item>
       <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>學號 :</string>
        </property>
@@ -111,8 +193,17 @@ QPushButton#pushButton_4:hover {
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>10</number>
+    </property>
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>班級 :</string>
        </property>
@@ -125,8 +216,17 @@ QPushButton#pushButton_4:hover {
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <property name="spacing">
+     <number>10</number>
+    </property>
      <item>
       <widget class="QLabel" name="label_3">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>姓名 :</string>
        </property>
@@ -139,8 +239,17 @@ QPushButton#pushButton_4:hover {
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <property name="spacing">
+     <number>10</number>
+    </property>
      <item>
       <widget class="QLabel" name="label_4">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>電話 :</string>
        </property>
@@ -153,6 +262,9 @@ QPushButton#pushButton_4:hover {
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <property name="spacing">
+     <number>10</number>
+    </property>
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="text">

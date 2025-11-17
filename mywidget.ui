@@ -11,7 +11,85 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MyWidget</string>
+   <string>通訊錄管理系統</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f5f5f5;
+}
+
+QTableWidget {
+    background-color: white;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    gridline-color: #bdc3c7;
+}
+
+QTableWidget::item {
+    padding: 5px;
+}
+
+QTableWidget::item:selected {
+    background-color: #3498db;
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: #3498db;
+    color: white;
+    padding: 5px;
+    border: 1px solid #2980b9;
+    font-weight: bold;
+}
+
+QLineEdit {
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db;
+}
+
+QLabel {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#pushButton_3 {
+    background-color: #27ae60;
+}
+
+QPushButton#pushButton_3:hover {
+    background-color: #229954;
+}
+
+QPushButton#pushButton_4 {
+    background-color: #e74c3c;
+}
+
+QPushButton#pushButton_4:hover {
+    background-color: #c0392b;
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -86,6 +164,20 @@
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
         <string>匯出</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>匯入</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>結束</string>
        </property>
       </widget>
      </item>

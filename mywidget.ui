@@ -54,7 +54,7 @@ QLineEdit:focus {
 }
 
 QLabel {
-    color: #2c3e50;
+    color: #f5f5f5;
     font-weight: bold;
 }
 
